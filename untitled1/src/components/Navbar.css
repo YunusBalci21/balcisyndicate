@@ -1,0 +1,77 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center;
+    padding: 0 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 3;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in-out 0.1s forwards;
+}
+
+.navbar-logo {
+    margin-right: auto;
+}
+
+.navbar-logo img {
+    height: 80px;
+    width: auto;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding-right: 40px;
+}
+
+.navbar-links li {
+    margin-left: 20px;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+.navbar-links a:hover {
+    background-color: white;
+    color: black;
+}
+
+.hero-content button,
+.description-content button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-content button:hover,
+.description-content button:hover {
+    background-color: darkorange;
+    transform: scale(1.05);
+}

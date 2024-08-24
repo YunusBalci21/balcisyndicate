@@ -1,0 +1,146 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for slide-in animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    background-color: #000; /* Fallback in case the video doesn't load */
+    opacity: 0;
+    animation: slideIn 0.8s ease-in-out 0.4s forwards;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1; /* Above the video, below the content */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensure this is above the overlay and video */
+    padding: 20px;
+    opacity: 0;
+    animation: slideIn 1s ease-in-out 0.5s forwards;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.hero-content button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero-content button:hover {
+    background-color: darkorange;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;  /* Behind the overlay and content */
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #f7f7f7;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in-out 0.8s forwards;
+}
+
+.description-content {
+    max-width: 600px;
+    margin-right: 50px;
+}
+
+.description-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.description-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.description-content a {
+    color: orange;
+    text-decoration: none;
+}
+
+.description-content a:hover {
+    text-decoration: underline;
+}
+
+.description-content button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.description-content button:hover {
+    background-color: darkorange;
+}
+
+.description-image {
+    max-width: 400px; /* You can adjust the width according to your layout */
+    margin-left: 50px;
+}
+
+.description-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
