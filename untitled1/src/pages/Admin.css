@@ -1,0 +1,67 @@
+/* Main container for the admin page */
+.admin-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 80vh; /* Minimum height to center vertically within the viewport */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Styling for the form */
+.admin-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%; /* Ensure the form takes full width up to max-width */
+    margin: auto; /* Center the form horizontally */
+}
+
+/* Title Styling */
+.admin-form h1 {
+    color: #ffbf00; /* Standard orange color */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem; /* Adjust font size as needed */
+}
+
+/* Input fields and button styling */
+.admin-form input[type="text"],
+.admin-form input[type="number"],
+.admin-form input[type="file"],
+.admin-form textarea {
+    width: calc(100% - 20px); /* Make input fields take full width minus padding */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Button styling */
+.admin-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffbf00; /* Corrected orange color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.admin-form button:hover {
+    background-color: darkorange;
+}
+
+/* Status message styling */
+.status-message {
+    color: red; /* or any color you prefer */
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    text-align: center;
+}

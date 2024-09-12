@@ -9,7 +9,6 @@
     }
 }
 
-/* Keyframes for slide-in animation */
 @keyframes slideIn {
     from {
         opacity: 0;
@@ -31,7 +30,7 @@
     color: white;
     text-align: center;
     overflow: hidden;
-    background-color: #000; /* Fallback in case the video doesn't load */
+    background-color: #000;
     opacity: 0;
     animation: slideIn 0.8s ease-in-out 0.4s forwards;
 }
@@ -42,16 +41,17 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
-    z-index: 1; /* Above the video, below the content */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2; /* Ensure this is above the overlay and video */
+    z-index: 2;
     padding: 20px;
     opacity: 0;
     animation: slideIn 1s ease-in-out 0.5s forwards;
+    color: orange; /* Ensure the text is orange */
 }
 
 .hero-content h1 {
@@ -68,6 +68,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .hero-content button:hover {
@@ -81,7 +82,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 0;  /* Behind the overlay and content */
+    z-index: 0;
 }
 
 .description {
@@ -102,21 +103,13 @@
 .description-content h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: orange; /* Ensure the text is orange */
 }
 
 .description-content p {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 20px;
-}
-
-.description-content a {
-    color: orange;
-    text-decoration: none;
-}
-
-.description-content a:hover {
-    text-decoration: underline;
 }
 
 .description-content button {
@@ -135,7 +128,7 @@
 }
 
 .description-image {
-    max-width: 400px; /* You can adjust the width according to your layout */
+    max-width: 400px;
     margin-left: 50px;
 }
 

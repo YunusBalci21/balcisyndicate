@@ -1,44 +1,208 @@
+/* Page Layout */
 .apartments-page {
     padding: 20px;
-    padding-top: 120px; /* Adjust this value if needed to push content below navbar */
+    padding-top: 120px;
 }
 
+/* Filter Bar Styling */
+.filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the filter bar content */
+    padding: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Spacing between Filter Elements */
+.filter-bar .dropdown,
+.filter-bar .slider-container {
+    margin-right: 20px; /* Space between the filters */
+}
+
+/* Price Slider Styling */
+.price-slider {
+    margin-left: 10px;
+    appearance: none;
+    width: 200px;
+    height: 4px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: opacity .2s, background-color .3s ease; /* Smooth transition for changes */
+}
+
+.price-slider:hover {
+    background-color: #f57c00; /* Lighter orange on hover */
+}
+
+.price-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: orange;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.price-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: orange;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: orange; /* Change dropdown button to orange */
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth transition for button */
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: darkorange;
+}
+
+/* Dropdown Menu Content */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show on hover */
+}
+
+/* Dropdown Menu Items */
+.dropdown-content button {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-content button:hover {
+    background-color: #ddd;
+}
+
+/* Adjusting the grid to make the apartments larger and stand in one line */
 .apartments-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Increase min width to make apartments larger */
     gap: 20px;
     padding: 20px;
 }
 
+/* Apartment Card Styling */
 .apartment-card {
     background: white;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
     text-decoration: none;
     color: inherit;
+    display: flex; /* Enables flexbox */
+    flex-direction: column; /* Stacks child elements vertically */
+    justify-content: space-between; /* Ensures even spacing */
+    height: auto; /* Allows height to adjust based on content */
+    min-height: 320px; /* Minimum height to accommodate all text */
 }
 
+/* Hover Effects on Cards */
 .apartment-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow on hover */
 }
 
+/* Image Styling for Apartment Cards */
 .apartment-card img {
     width: 100%;
-    height: 200px;
+    height: 250px; /* Adjust height to match larger card size */
     object-fit: cover;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards; /* Smooth fade-in effect */
 }
 
+/* Keyframes for Image Fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Title Styling */
 .apartment-card h2 {
-    font-size: 1.5rem;
-    margin: 15px;
-    color: #4a148c; /* Purple color */
+    font-size: 1.8rem; /* Increase the title font size */
+    margin: 20px 15px 10px; /* Adjust margin for better spacing */
+    color: black; /* Purple color */
     font-weight: bold;
 }
 
+/* Description Styling */
 .apartment-card p {
-    font-size: 1rem;
+    font-size: 1.2rem; /* Increase font size for description */
     margin: 0 15px 15px;
     color: #333; /* Darker gray for better readability */
+    line-height: 1.6; /* Improve line spacing */
+    white-space: normal; /* Allows text to wrap to the next line */
+}
+
+/* Price Styling */
+.apartment-card p:last-child {
+    font-weight: bold; /* Make the price stand out */
+    font-size: 1.3rem; /* Slightly larger font for the price */
+    color: grey; /* Orange color for emphasis */
+}
+
+/* Smooth Transition for Filters */
+.filter-item {
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth color transition */
+}
+
+.filter-item.active {
+    color: grey; /* Darker orange for active state */
+    border-bottom: 2px solid darkorange; /* Underline for active state */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .apartments-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Smaller grid for mobile */
+    }
+
+    .apartment-card {
+        min-height: 280px; /* Reduce min height for smaller screens */
+    }
+
+    .apartment-card img {
+        height: 200px; /* Reduce image height for smaller screens */
+    }
 }

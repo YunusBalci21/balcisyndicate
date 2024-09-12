@@ -12,9 +12,9 @@ const Navbar = () => {
             </div>
             <ul className="navbar-links">
                 <li><Link to="/lejligheder">Lejligheder</Link></li>
-                <li><a href="#tv-internet">TV / Internet</a></li>
-                <li><a href="#ledige-lejemal">Ledige Lejemål</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
+                <li><Link to="/tv-internet">TV / Internet</Link></li>
+                <li><Link to="/ledige-lejemaal">Ledige Lejemål</Link></li>
+                <li><Link to="/kontakt">Kontakt</Link></li> {/* Correct link to Kontakt */}
             </ul>
         </nav>
     );

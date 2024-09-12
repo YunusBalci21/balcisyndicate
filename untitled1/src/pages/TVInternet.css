@@ -1,0 +1,50 @@
+.tv-internet-page {
+    padding: 20px;
+    padding-top: 100px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.content-section {
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: space-between; /* Distribute space between elements */
+    gap: 50px; /* Increase the gap for better spacing */
+}
+
+.text-content {
+    flex: 1;
+    max-width: 500px; /* Adjust the max-width for a better balance */
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tv-internet-image {
+    width: 100%;
+    max-width: 600px; /* Increase max-width for a larger image */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Color styles for headings */
+h1 {
+    color: #e65100; /* Orange color for main heading */
+    text-align: center;
+}
+
+h2 {
+    color: #e65100; /* Orange color for section headings */
+}
+
+/* Styling for paragraphs */
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #333;
+}
